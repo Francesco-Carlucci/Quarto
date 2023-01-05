@@ -59,8 +59,13 @@ piece_to_binary = {
         14: "1110",
         15: "1111",
 }
+import numpy as np
+from abc import abstractmethod
+import copy
+
 
 class Player(object):
+
     def __init__(self, quarto) -> None:
         self.__quarto = quarto
 
@@ -75,20 +80,25 @@ class Player(object):
     def get_game(self):
         return self.__quarto
 
+
 class Piece(object):
+
     def __init__(self, high: bool, coloured: bool, solid: bool, square: bool) -> None:
         self.HIGH = high
         self.COLOURED = coloured
         self.SOLID = solid
         self.SQUARE = square
 
+
 class Quarto(object):
+
     MAX_PLAYERS = 2
     BOARD_SIDE = 4
 
     def __init__(self) -> None:
         self.__players = ()
         self.reset()
+
 
     def reset(self):
         self.__board = np.ones(shape=(self.BOARD_SIDE, self.BOARD_SIDE), dtype=int) * -1
@@ -111,12 +121,6 @@ class Quarto(object):
         self.__pieces.append(Piece(True, True, True, True))  # 15
         self.__current_player = 0
         self.__selected_piece_index = -1
-
-    def fromBoard(self,board,pieces,selected_piece):
-        self.__board=board
-        #self.__pieces=pieces
-        self.__selected_piece_index=selected_piece
-        return self
 
     def set_players(self, players: tuple[Player, Player]):
         self.__players = players
@@ -147,15 +151,23 @@ class Quarto(object):
         Print the board
         '''
         for row in self.__board:
-            print("\n -------------------")
+            print("\n ---------------------------")
             print("|", end="")
             for element in row:
-                if element!=-1:
+                if element != -1:
                     print(f" {piece_to_binary[element]: >2}", end=" |")
                 else:
-                    print(f" {element: >6}", end=" |")
-        print("\n -------------------\n")
+                    print(f" {element: >4}", end=" |")
+        print("\n ---------------------------\n")
         print(f"Selected piece: {self.__selected_piece_index}\n")
+
+    def fromBoard(self, board, selected_piece):
+        self.__board = board
+        self.__selected_piece_index = selected_piece
+        return self
+
+    def get_pieces(self):
+        return copy.deepcopy(self.__pieces)
 
     def get_piece_charachteristics(self, index: int) -> Piece:
         '''
@@ -174,40 +186,76 @@ class Quarto(object):
         Get index of selected piece
         '''
         return copy.deepcopy(self.__selected_piece_index)
-    def get_pieces(self):
-        return copy.deepcopy(self.__pieces)
 
     def __check_horizontal(self) -> int:
         for i in range(self.BOARD_SIDE):
-            high_values = [elem for elem in self.__board[i] if elem > 0 and self.__pieces[elem].HIGH]
-            coloured_values = [elem for elem in self.__board[i] if elem > 0 and self.__pieces[elem].COLOURED]
-            solid_values = [elem for elem in self.__board[i] if elem > 0 and self.__pieces[elem].SOLID]
-            square_values = [elem for elem in self.__board[i] if elem > 0 and self.__pieces[elem].SQUARE]
-            low_values = [elem for elem in self.__board[i] if elem > 0 and not self.__pieces[elem].HIGH]
-            noncolor_values = [elem for elem in self.__board[i] if elem > 0 and not self.__pieces[elem].COLOURED]
-            hollow_values = [elem for elem in self.__board[i] if elem > 0 and not self.__pieces[elem].SOLID]
-            circle_values = [elem for elem in self.__board[i] if elem > 0 and not self.__pieces[elem].SQUARE]
-            if len(high_values) == self.BOARD_SIDE or len(coloured_values) == self.BOARD_SIDE or len(
-                    solid_values) == self.BOARD_SIDE or len(square_values) == self.BOARD_SIDE or len(
-                    low_values) == self.BOARD_SIDE or len(noncolor_values) == self.BOARD_SIDE or len(
-                    hollow_values) == self.BOARD_SIDE or len(circle_values) == self.BOARD_SIDE:
+            high_values = [
+                elem for elem in self.__board[i] if elem >= 0 and self.__pieces[elem].HIGH
+            ]
+            coloured_values = [
+                elem for elem in self.__board[i] if elem >= 0 and self.__pieces[elem].COLOURED
+            ]
+            solid_values = [
+                elem for elem in self.__board[i] if elem >= 0 and self.__pieces[elem].SOLID
+            ]
+            square_values = [
+                elem for elem in self.__board[i] if elem >= 0 and self.__pieces[elem].SQUARE
+            ]
+            low_values = [
+                elem for elem in self.__board[i] if elem >= 0 and not self.__pieces[elem].HIGH
+            ]
+            noncolor_values = [
+                elem for elem in self.__board[i] if elem >= 0 and not self.__pieces[elem].COLOURED
+            ]
+            hollow_values = [
+                elem for elem in self.__board[i] if elem >= 0 and not self.__pieces[elem].SOLID
+            ]
+            circle_values = [
+                elem for elem in self.__board[i] if elem >= 0 and not self.__pieces[elem].SQUARE
+            ]
+            if len(high_values) == self.BOARD_SIDE or len(
+                    coloured_values
+            ) == self.BOARD_SIDE or len(solid_values) == self.BOARD_SIDE or len(
+                    square_values) == self.BOARD_SIDE or len(low_values) == self.BOARD_SIDE or len(
+                        noncolor_values) == self.BOARD_SIDE or len(
+                            hollow_values) == self.BOARD_SIDE or len(
+                                circle_values) == self.BOARD_SIDE:
                 return self.__current_player
         return -1
 
     def __check_vertical(self):
         for i in range(self.BOARD_SIDE):
-            high_values = [elem for elem in self.__board[:, i] if elem > 0 and self.__pieces[elem].HIGH]
-            coloured_values = [elem for elem in self.__board[:, i] if elem > 0 and self.__pieces[elem].COLOURED]
-            solid_values = [elem for elem in self.__board[:, i] if elem > 0 and self.__pieces[elem].SOLID]
-            square_values = [elem for elem in self.__board[:, i] if elem > 0 and self.__pieces[elem].SQUARE]
-            low_values = [elem for elem in self.__board[:, i] if elem > 0 and not self.__pieces[elem].HIGH]
-            noncolor_values = [elem for elem in self.__board[:, i] if elem > 0 and not self.__pieces[elem].COLOURED]
-            hollow_values = [elem for elem in self.__board[:, i] if elem > 0 and not self.__pieces[elem].SOLID]
-            circle_values = [elem for elem in self.__board[:, i] if elem > 0 and not self.__pieces[elem].SQUARE]
-            if len(high_values) == self.BOARD_SIDE or len(coloured_values) == self.BOARD_SIDE or len(
-                    solid_values) == self.BOARD_SIDE or len(square_values) == self.BOARD_SIDE or len(
-                    low_values) == self.BOARD_SIDE or len(noncolor_values) == self.BOARD_SIDE or len(
-                    hollow_values) == self.BOARD_SIDE or len(circle_values) == self.BOARD_SIDE:
+            high_values = [
+                elem for elem in self.__board[:, i] if elem >= 0 and self.__pieces[elem].HIGH
+            ]
+            coloured_values = [
+                elem for elem in self.__board[:, i] if elem >= 0 and self.__pieces[elem].COLOURED
+            ]
+            solid_values = [
+                elem for elem in self.__board[:, i] if elem >= 0 and self.__pieces[elem].SOLID
+            ]
+            square_values = [
+                elem for elem in self.__board[:, i] if elem >= 0 and self.__pieces[elem].SQUARE
+            ]
+            low_values = [
+                elem for elem in self.__board[:, i] if elem >= 0 and not self.__pieces[elem].HIGH
+            ]
+            noncolor_values = [
+                elem for elem in self.__board[:, i] if elem >= 0 and not self.__pieces[elem].COLOURED
+            ]
+            hollow_values = [
+                elem for elem in self.__board[:, i] if elem >= 0 and not self.__pieces[elem].SOLID
+            ]
+            circle_values = [
+                elem for elem in self.__board[:, i] if elem >= 0 and not self.__pieces[elem].SQUARE
+            ]
+            if len(high_values) == self.BOARD_SIDE or len(
+                    coloured_values
+            ) == self.BOARD_SIDE or len(solid_values) == self.BOARD_SIDE or len(
+                    square_values) == self.BOARD_SIDE or len(low_values) == self.BOARD_SIDE or len(
+                        noncolor_values) == self.BOARD_SIDE or len(
+                            hollow_values) == self.BOARD_SIDE or len(
+                                circle_values) == self.BOARD_SIDE:
                 return self.__current_player
         return -1
 
@@ -241,8 +289,9 @@ class Quarto(object):
                 circle_values.append(self.__board[i, i])
         if len(high_values) == self.BOARD_SIDE or len(coloured_values) == self.BOARD_SIDE or len(
                 solid_values) == self.BOARD_SIDE or len(square_values) == self.BOARD_SIDE or len(
-                low_values) == self.BOARD_SIDE or len(noncolor_values) == self.BOARD_SIDE or len(
-                hollow_values) == self.BOARD_SIDE or len(circle_values) == self.BOARD_SIDE:
+                    low_values
+                ) == self.BOARD_SIDE or len(noncolor_values) == self.BOARD_SIDE or len(
+                    hollow_values) == self.BOARD_SIDE or len(circle_values) == self.BOARD_SIDE:
             return self.__current_player
         high_values = []
         coloured_values = []
@@ -253,29 +302,32 @@ class Quarto(object):
         hollow_values = []
         circle_values = []
         for i in range(self.BOARD_SIDE):
-            if self.__board[-i, -i] < 0:
+            if self.__board[i, self.BOARD_SIDE - 1 - i] < 0:
                 break
-            if self.__pieces[self.__board[i, i]].HIGH:
-                high_values.append(self.__board[-i, -i])
+            if self.__pieces[self.__board[i, self.BOARD_SIDE - 1 - i]].HIGH:
+                high_values.append(self.__board[i, self.BOARD_SIDE - 1 - i])
             else:
-                low_values.append(self.__board[-i, -i])
-            if self.__pieces[self.__board[-i, -i]].COLOURED:
-                coloured_values.append(self.__board[-i, -i])
+                low_values.append(self.__board[i, self.BOARD_SIDE - 1 - i])
+            if self.__pieces[self.__board[i, self.BOARD_SIDE - 1 - i]].COLOURED:
+                coloured_values.append(
+                    self.__board[i, self.BOARD_SIDE - 1 - i])
             else:
-                noncolor_values.append(self.__board[-i, -i])
-            if self.__pieces[self.__board[-i, -i]].SOLID:
-                solid_values.append(self.__board[-i, -i])
+                noncolor_values.append(
+                    self.__board[i, self.BOARD_SIDE - 1 - i])
+            if self.__pieces[self.__board[i, self.BOARD_SIDE - 1 - i]].SOLID:
+                solid_values.append(self.__board[i, self.BOARD_SIDE - 1 - i])
             else:
-                hollow_values.append(self.__board[-i, -i])
-            if self.__pieces[self.__board[-i, -i]].SQUARE:
-                square_values.append(self.__board[-i, -i])
+                hollow_values.append(self.__board[i, self.BOARD_SIDE - 1 - i])
+            if self.__pieces[self.__board[i, self.BOARD_SIDE - 1 - i]].SQUARE:
+                square_values.append(self.__board[i, self.BOARD_SIDE - 1 - i])
             else:
-                circle_values.append(self.__board[-i, -i])
-            if len(high_values) == self.BOARD_SIDE or len(coloured_values) == self.BOARD_SIDE or len(
-                    solid_values) == self.BOARD_SIDE or len(square_values) == self.BOARD_SIDE or len(
-                    low_values) == self.BOARD_SIDE or len(noncolor_values) == self.BOARD_SIDE or len(
+                circle_values.append(self.__board[i, self.BOARD_SIDE - 1 - i])
+        if len(high_values) == self.BOARD_SIDE or len(coloured_values) == self.BOARD_SIDE or len(
+                solid_values) == self.BOARD_SIDE or len(square_values) == self.BOARD_SIDE or len(
+                    low_values
+                ) == self.BOARD_SIDE or len(noncolor_values) == self.BOARD_SIDE or len(
                     hollow_values) == self.BOARD_SIDE or len(circle_values) == self.BOARD_SIDE:
-                return self.__current_player
+            return self.__current_player
         return -1
 
     def check_winner(self) -> int:
@@ -316,7 +368,7 @@ class Quarto(object):
             while not piece_ok:
                 x, y = self.__players[self.__current_player].place_piece()
                 piece_ok = self.place(x, y)
-            print(f"player {self.__current_player} place at: ({x},{y})")
+                print(f"player {self.__current_player} place at: ({x},{y})")
             winner = self.check_winner()
         self.print()
         return winner

@@ -1,5 +1,5 @@
 import Quarto
-from Player import RandomPlayer,HumanPlayer, minmaxPlayer
+from Player import RandomPlayer,HumanPlayer, minmaxPlayer,rulePlayer
 import logging
 import argparse
 
@@ -7,13 +7,26 @@ import numpy as np
 
 
 def main():
-    game = Quarto.Quarto()
-    game.set_players((RandomPlayer(game),minmaxPlayer(game)))
-    #endgame=np.array([[9,2,3,-1],[7,-1,6,-1],[-1,11,5,0],[-1,4,-1,8]])
-    #pieces=[p for p in range(15) if p not in [9,2,3,0,7,6,11,5,4,8]]
-    #game.fromBoard(endgame,pieces,game.get_selected_piece())
-    winner = game.run()
-    logging.warning(f"main: Winner: player {winner}")
+    wins = []
+    for i in range(100):
+        game = Quarto.Quarto()
+        game.set_players((RandomPlayer(game),rulePlayer(game)))
+        """
+        | -1 | 0111 | 0010 | 1001 |
+        ---------------------------
+        | -1 | 0000 | 0001 | 0011 |
+        -------------------
+        | -1 | 0100 | 1000 | 1011 |
+        -------------------
+        | 0110 | 0101 | -1 | 1100 |
+        """
+        #endgame=np.array([[ -1, 7,2,9 ],[-1,0,1,3],[-1,4,8,11],[6,5,-1,12]])
+        #pieces=[p for p in range(15) if p not in [7,2,9,0,1,3,4,8,11,6,5,12]]
+        #game.fromBoard(endgame,game.get_selected_piece())
+        winner = game.run()
+        wins.append(winner)
+    logging.warning(f"main: Winner: player {wins}")
+    print(sum(wins),"% wins")
 
     print(f"Winner: player {winner}")
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
