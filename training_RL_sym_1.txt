@@ -1,0 +1,911 @@
+Final rule based player with random factor:  0
+rand fact:  0
+epoch n.:  0
+0.49999
+main: Winner: player 10%
+epoch n.:  1000
+0.48998999999999
+main: Winner: player 11%
+epoch n.:  2000
+0.47998999999998
+main: Winner: player 11%
+epoch n.:  3000
+0.46998999999997
+main: Winner: player 8%
+epoch n.:  4000
+0.45998999999996
+main: Winner: player 22%
+epoch n.:  5000
+0.44998999999995
+main: Winner: player 18%
+epoch n.:  6000
+0.43998999999994
+main: Winner: player 14%
+epoch n.:  7000
+0.42998999999993
+main: Winner: player 24%
+epoch n.:  8000
+0.41998999999992
+main: Winner: player 15%
+epoch n.:  9000
+0.40998999999991
+main: Winner: player 12%
+epoch n.:  10000
+0.3999899999999
+main: Winner: player 13%
+epoch n.:  11000
+0.38998999999989
+main: Winner: player 16%
+epoch n.:  12000
+0.37998999999988
+main: Winner: player 12%
+epoch n.:  13000
+0.36998999999987
+main: Winner: player 23%
+epoch n.:  14000
+0.35998999999986
+main: Winner: player 25%
+epoch n.:  15000
+0.34998999999985
+main: Winner: player 7%
+epoch n.:  16000
+0.33998999999984
+main: Winner: player 12%
+epoch n.:  17000
+0.32998999999983
+main: Winner: player 15%
+epoch n.:  18000
+0.31998999999982
+main: Winner: player 11%
+epoch n.:  19000
+0.30998999999981
+main: Winner: player 24%
+epoch n.:  20000
+0.29998999999979997
+main: Winner: player 20%
+epoch n.:  21000
+0.28998999999978997
+main: Winner: player 20%
+epoch n.:  22000
+0.27998999999977997
+main: Winner: player 17%
+epoch n.:  23000
+0.26998999999976997
+main: Winner: player 13%
+epoch n.:  24000
+0.25998999999975997
+main: Winner: player 24%
+epoch n.:  25000
+0.24998999999974997
+main: Winner: player 15%
+epoch n.:  26000
+0.23998999999973997
+main: Winner: player 12%
+epoch n.:  27000
+0.22998999999972997
+main: Winner: player 12%
+epoch n.:  28000
+0.21998999999971997
+main: Winner: player 42%
+epoch n.:  29000
+0.20998999999970996
+main: Winner: player 26%
+epoch n.:  30000
+0.19998999999969996
+main: Winner: player 47%
+epoch n.:  31000
+0.18998999999968996
+main: Winner: player 24%
+epoch n.:  32000
+0.17998999999967996
+main: Winner: player 59%
+epoch n.:  33000
+0.16998999999966996
+main: Winner: player 30%
+epoch n.:  34000
+0.15998999999965996
+main: Winner: player 41%
+epoch n.:  35000
+0.14998999999964996
+main: Winner: player 35%
+epoch n.:  36000
+0.13998999999963996
+main: Winner: player 41%
+epoch n.:  37000
+0.12998999999962996
+main: Winner: player 11%
+epoch n.:  38000
+0.11998999999962692
+main: Winner: player 4%
+epoch n.:  39000
+0.1099899999996308
+main: Winner: player 37%
+epoch n.:  40000
+0.09998999999963468
+main: Winner: player 65%
+epoch n.:  41000
+0.08998999999963855
+main: Winner: player 71%
+epoch n.:  42000
+0.07998999999964243
+main: Winner: player 67%
+epoch n.:  43000
+0.06998999999964631
+main: Winner: player 51%
+epoch n.:  44000
+0.059989999999648436
+main: Winner: player 6%
+epoch n.:  45000
+0.049989999999645374
+main: Winner: player 63%
+epoch n.:  46000
+0.03998999999964231
+main: Winner: player 86%
+epoch n.:  47000
+0.02998999999963969
+main: Winner: player 86%
+epoch n.:  48000
+0.019989999999640098
+main: Winner: player 94%
+epoch n.:  49000
+0.009989999999640505
+main: Winner: player 96%
+epoch n.:  50000
+-1.0000000359256655e-05
+main: Winner: player 100%
+rand fact:  0.05
+epoch n.:  51000
+-0.010010000000359018
+main: Winner: player 81%
+epoch n.:  52000
+-0.020010000000358612
+main: Winner: player 87%
+epoch n.:  53000
+-0.030010000000358205
+main: Winner: player 80%
+epoch n.:  54000
+-0.04001000000036084
+main: Winner: player 82%
+epoch n.:  55000
+-0.0500100000003639
+main: Winner: player 86%
+epoch n.:  56000
+-0.060010000000366964
+main: Winner: player 78%
+epoch n.:  57000
+-0.07001000000036481
+main: Winner: player 85%
+epoch n.:  58000
+-0.08001000000036093
+main: Winner: player 86%
+epoch n.:  59000
+-0.09001000000035705
+main: Winner: player 86%
+epoch n.:  60000
+-0.10001000000035318
+main: Winner: player 79%
+epoch n.:  61000
+-0.1100100000003493
+main: Winner: player 78%
+epoch n.:  62000
+-0.12001000000034542
+main: Winner: player 86%
+epoch n.:  63000
+-0.1300100000003485
+main: Winner: player 84%
+epoch n.:  64000
+-0.14001000000035851
+main: Winner: player 89%
+epoch n.:  65000
+-0.15001000000036852
+main: Winner: player 85%
+epoch n.:  66000
+-0.16001000000037852
+main: Winner: player 85%
+epoch n.:  67000
+-0.17001000000038852
+main: Winner: player 77%
+epoch n.:  68000
+-0.18001000000039852
+main: Winner: player 82%
+epoch n.:  69000
+-0.19001000000040852
+main: Winner: player 78%
+epoch n.:  70000
+-0.20001000000041852
+main: Winner: player 73%
+epoch n.:  71000
+-0.21001000000042852
+main: Winner: player 84%
+epoch n.:  72000
+-0.22001000000043852
+main: Winner: player 86%
+epoch n.:  73000
+-0.23001000000044852
+main: Winner: player 79%
+epoch n.:  74000
+-0.24001000000045852
+main: Winner: player 85%
+epoch n.:  75000
+-0.2500100000004685
+main: Winner: player 88%
+epoch n.:  76000
+-0.2600100000004785
+main: Winner: player 84%
+epoch n.:  77000
+-0.2700100000004885
+main: Winner: player 83%
+epoch n.:  78000
+-0.2800100000004985
+main: Winner: player 91%
+epoch n.:  79000
+-0.2900100000005085
+main: Winner: player 85%
+epoch n.:  80000
+-0.30001000000051853
+main: Winner: player 87%
+epoch n.:  81000
+-0.31001000000052853
+main: Winner: player 80%
+epoch n.:  82000
+-0.32001000000053853
+main: Winner: player 78%
+epoch n.:  83000
+-0.33001000000054853
+main: Winner: player 84%
+epoch n.:  84000
+-0.34001000000055853
+main: Winner: player 86%
+epoch n.:  85000
+-0.35001000000056853
+main: Winner: player 86%
+epoch n.:  86000
+-0.36001000000057853
+main: Winner: player 86%
+epoch n.:  87000
+-0.37001000000058853
+main: Winner: player 85%
+epoch n.:  88000
+-0.38001000000059854
+main: Winner: player 78%
+epoch n.:  89000
+-0.39001000000060854
+main: Winner: player 76%
+epoch n.:  90000
+-0.40001000000061854
+main: Winner: player 90%
+epoch n.:  91000
+-0.41001000000062854
+main: Winner: player 86%
+epoch n.:  92000
+-0.42001000000063854
+main: Winner: player 87%
+epoch n.:  93000
+-0.43001000000064854
+main: Winner: player 83%
+epoch n.:  94000
+-0.44001000000065854
+main: Winner: player 81%
+epoch n.:  95000
+-0.45001000000066854
+main: Winner: player 84%
+epoch n.:  96000
+-0.46001000000067854
+main: Winner: player 83%
+epoch n.:  97000
+-0.47001000000068854
+main: Winner: player 80%
+epoch n.:  98000
+-0.48001000000069854
+main: Winner: player 84%
+epoch n.:  99000
+-0.49001000000070855
+main: Winner: player 78%
+epoch n.:  100000
+-0.5000100000007185
+main: Winner: player 84%
+rand fact:  0.1
+epoch n.:  101000
+-0.510010000000673
+main: Winner: player 72%
+epoch n.:  102000
+-0.5200100000006275
+main: Winner: player 67%
+epoch n.:  103000
+-0.530010000000582
+main: Winner: player 63%
+epoch n.:  104000
+-0.5400100000005364
+main: Winner: player 63%
+epoch n.:  105000
+-0.5500100000004909
+main: Winner: player 71%
+epoch n.:  106000
+-0.5600100000004454
+main: Winner: player 55%
+epoch n.:  107000
+-0.5700100000003999
+main: Winner: player 65%
+epoch n.:  108000
+-0.5800100000003544
+main: Winner: player 64%
+epoch n.:  109000
+-0.5900100000003089
+main: Winner: player 70%
+epoch n.:  110000
+-0.6000100000002634
+main: Winner: player 72%
+epoch n.:  111000
+-0.6100100000002179
+main: Winner: player 68%
+epoch n.:  112000
+-0.6200100000001724
+main: Winner: player 70%
+epoch n.:  113000
+-0.6300100000001269
+main: Winner: player 63%
+epoch n.:  114000
+-0.6400100000000813
+main: Winner: player 57%
+epoch n.:  115000
+-0.6500100000000358
+main: Winner: player 56%
+epoch n.:  116000
+-0.6600099999999903
+main: Winner: player 53%
+epoch n.:  117000
+-0.6700099999999448
+main: Winner: player 44%
+epoch n.:  118000
+-0.6800099999998993
+main: Winner: player 71%
+epoch n.:  119000
+-0.6900099999998538
+main: Winner: player 64%
+epoch n.:  120000
+-0.7000099999998083
+main: Winner: player 54%
+epoch n.:  121000
+-0.7100099999997628
+main: Winner: player 61%
+epoch n.:  122000
+-0.7200099999997173
+main: Winner: player 55%
+epoch n.:  123000
+-0.7300099999996718
+main: Winner: player 48%
+epoch n.:  124000
+-0.7400099999996262
+main: Winner: player 59%
+epoch n.:  125000
+-0.7500099999995807
+main: Winner: player 56%
+epoch n.:  126000
+-0.7600099999995352
+main: Winner: player 57%
+epoch n.:  127000
+-0.7700099999994897
+main: Winner: player 58%
+epoch n.:  128000
+-0.7800099999994442
+main: Winner: player 53%
+epoch n.:  129000
+-0.7900099999993987
+main: Winner: player 57%
+epoch n.:  130000
+-0.8000099999993532
+main: Winner: player 51%
+epoch n.:  131000
+-0.8100099999993077
+main: Winner: player 65%
+epoch n.:  132000
+-0.8200099999992622
+main: Winner: player 72%
+epoch n.:  133000
+-0.8300099999992167
+main: Winner: player 66%
+epoch n.:  134000
+-0.8400099999991711
+main: Winner: player 73%
+epoch n.:  135000
+-0.8500099999991256
+main: Winner: player 73%
+epoch n.:  136000
+-0.8600099999990801
+main: Winner: player 70%
+epoch n.:  137000
+-0.8700099999990346
+main: Winner: player 66%
+epoch n.:  138000
+-0.8800099999989891
+main: Winner: player 75%
+epoch n.:  139000
+-0.8900099999989436
+main: Winner: player 74%
+epoch n.:  140000
+-0.9000099999988981
+main: Winner: player 70%
+epoch n.:  141000
+-0.9100099999988526
+main: Winner: player 75%
+epoch n.:  142000
+-0.9200099999988071
+main: Winner: player 79%
+epoch n.:  143000
+-0.9300099999987615
+main: Winner: player 72%
+epoch n.:  144000
+-0.940009999998716
+main: Winner: player 72%
+epoch n.:  145000
+-0.9500099999986705
+main: Winner: player 76%
+epoch n.:  146000
+-0.960009999998625
+main: Winner: player 77%
+epoch n.:  147000
+-0.9700099999985795
+main: Winner: player 80%
+epoch n.:  148000
+-0.980009999998534
+main: Winner: player 72%
+epoch n.:  149000
+-0.9900099999984885
+main: Winner: player 76%
+epoch n.:  150000
+-1.000009999998443
+main: Winner: player 66%
+epoch n.:  151000
+-1.0100099999985086
+main: Winner: player 73%
+epoch n.:  152000
+-1.0200099999985741
+main: Winner: player 77%
+epoch n.:  153000
+-1.0300099999986396
+main: Winner: player 65%
+epoch n.:  154000
+-1.0400099999987051
+main: Winner: player 57%
+epoch n.:  155000
+-1.0500099999987706
+main: Winner: player 46%
+epoch n.:  156000
+-1.0600099999988362
+main: Winner: player 68%
+epoch n.:  157000
+-1.0700099999989017
+main: Winner: player 55%
+epoch n.:  158000
+-1.0800099999989672
+main: Winner: player 71%
+epoch n.:  159000
+-1.0900099999990327
+main: Winner: player 80%
+epoch n.:  160000
+-1.1000099999990982
+main: Winner: player 67%
+epoch n.:  161000
+-1.1100099999991637
+main: Winner: player 63%
+epoch n.:  162000
+-1.1200099999992292
+main: Winner: player 44%
+epoch n.:  163000
+-1.1300099999992947
+main: Winner: player 70%
+epoch n.:  164000
+-1.1400099999993603
+main: Winner: player 67%
+epoch n.:  165000
+-1.1500099999994258
+main: Winner: player 57%
+epoch n.:  166000
+-1.1600099999994913
+main: Winner: player 59%
+epoch n.:  167000
+-1.1700099999995568
+main: Winner: player 61%
+epoch n.:  168000
+-1.1800099999996223
+main: Winner: player 53%
+epoch n.:  169000
+-1.1900099999996878
+main: Winner: player 50%
+epoch n.:  170000
+-1.2000099999997533
+main: Winner: player 58%
+epoch n.:  171000
+-1.2100099999998188
+main: Winner: player 61%
+epoch n.:  172000
+-1.2200099999998844
+main: Winner: player 66%
+epoch n.:  173000
+-1.2300099999999499
+main: Winner: player 60%
+epoch n.:  174000
+-1.2400100000000154
+main: Winner: player 59%
+epoch n.:  175000
+-1.250010000000081
+main: Winner: player 61%
+epoch n.:  176000
+-1.2600100000001464
+main: Winner: player 46%
+epoch n.:  177000
+-1.270010000000212
+main: Winner: player 51%
+epoch n.:  178000
+-1.2800100000002774
+main: Winner: player 55%
+epoch n.:  179000
+-1.290010000000343
+main: Winner: player 50%
+epoch n.:  180000
+-1.3000100000004084
+main: Winner: player 50%
+epoch n.:  181000
+-1.310010000000474
+main: Winner: player 45%
+epoch n.:  182000
+-1.3200100000005395
+main: Winner: player 72%
+epoch n.:  183000
+-1.330010000000605
+main: Winner: player 72%
+epoch n.:  184000
+-1.3400100000006705
+main: Winner: player 62%
+epoch n.:  185000
+-1.350010000000736
+main: Winner: player 60%
+epoch n.:  186000
+-1.3600100000008015
+main: Winner: player 51%
+epoch n.:  187000
+-1.370010000000867
+main: Winner: player 50%
+epoch n.:  188000
+-1.3800100000009325
+main: Winner: player 60%
+epoch n.:  189000
+-1.390010000000998
+main: Winner: player 54%
+epoch n.:  190000
+-1.4000100000010636
+main: Winner: player 65%
+epoch n.:  191000
+-1.410010000001129
+main: Winner: player 45%
+epoch n.:  192000
+-1.4200100000011946
+main: Winner: player 49%
+epoch n.:  193000
+-1.43001000000126
+main: Winner: player 65%
+epoch n.:  194000
+-1.4400100000013256
+main: Winner: player 69%
+epoch n.:  195000
+-1.4500100000013911
+main: Winner: player 57%
+epoch n.:  196000
+-1.4600100000014566
+main: Winner: player 12%
+epoch n.:  197000
+-1.4700100000015222
+main: Winner: player 52%
+epoch n.:  198000
+-1.4800100000015877
+main: Winner: player 59%
+epoch n.:  199000
+-1.4900100000016532
+main: Winner: player 60%
+epoch n.:  200000
+-1.5000100000017187
+main: Winner: player 62%
+epoch n.:  201000
+-1.5100100000017842
+main: Winner: player 51%
+epoch n.:  202000
+-1.5200100000018497
+main: Winner: player 61%
+epoch n.:  203000
+-1.5300100000019152
+main: Winner: player 56%
+epoch n.:  204000
+-1.5400100000019807
+main: Winner: player 55%
+epoch n.:  205000
+-1.5500100000020463
+main: Winner: player 58%
+epoch n.:  206000
+-1.5600100000021118
+main: Winner: player 54%
+epoch n.:  207000
+-1.5700100000021773
+main: Winner: player 55%
+epoch n.:  208000
+-1.5800100000022428
+main: Winner: player 42%
+epoch n.:  209000
+-1.5900100000023083
+main: Winner: player 57%
+epoch n.:  210000
+-1.6000100000023738
+main: Winner: player 57%
+epoch n.:  211000
+-1.6100100000024393
+main: Winner: player 36%
+epoch n.:  212000
+-1.6200100000025048
+main: Winner: player 51%
+epoch n.:  213000
+-1.6300100000025703
+main: Winner: player 60%
+epoch n.:  214000
+-1.6400100000026359
+main: Winner: player 53%
+epoch n.:  215000
+-1.6500100000027014
+main: Winner: player 50%
+epoch n.:  216000
+-1.6600100000027669
+main: Winner: player 54%
+epoch n.:  217000
+-1.6700100000028324
+main: Winner: player 52%
+epoch n.:  218000
+-1.680010000002898
+main: Winner: player 49%
+epoch n.:  219000
+-1.6900100000029634
+main: Winner: player 56%
+epoch n.:  220000
+-1.700010000003029
+main: Winner: player 55%
+epoch n.:  221000
+-1.7100100000030944
+main: Winner: player 55%
+epoch n.:  222000
+-1.72001000000316
+main: Winner: player 54%
+epoch n.:  223000
+-1.7300100000032255
+main: Winner: player 49%
+epoch n.:  224000
+-1.740010000003291
+main: Winner: player 43%
+epoch n.:  225000
+-1.7500100000033565
+main: Winner: player 52%
+epoch n.:  226000
+-1.760010000003422
+main: Winner: player 51%
+epoch n.:  227000
+-1.7700100000034875
+main: Winner: player 54%
+epoch n.:  228000
+-1.780010000003553
+main: Winner: player 46%
+epoch n.:  229000
+-1.7900100000036185
+main: Winner: player 48%
+epoch n.:  230000
+-1.800010000003684
+main: Winner: player 50%
+epoch n.:  231000
+-1.8100100000037496
+main: Winner: player 42%
+epoch n.:  232000
+-1.820010000003815
+main: Winner: player 62%
+epoch n.:  233000
+-1.8300100000038806
+main: Winner: player 46%
+epoch n.:  234000
+-1.840010000003946
+main: Winner: player 56%
+epoch n.:  235000
+-1.8500100000040116
+main: Winner: player 68%
+epoch n.:  236000
+-1.8600100000040771
+main: Winner: player 56%
+epoch n.:  237000
+-1.8700100000041426
+main: Winner: player 50%
+epoch n.:  238000
+-1.8800100000042081
+main: Winner: player 64%
+epoch n.:  239000
+-1.8900100000042737
+main: Winner: player 49%
+epoch n.:  240000
+-1.9000100000043392
+main: Winner: player 58%
+epoch n.:  241000
+-1.9100100000044047
+main: Winner: player 59%
+epoch n.:  242000
+-1.9200100000044702
+main: Winner: player 59%
+epoch n.:  243000
+-1.9300100000045357
+main: Winner: player 58%
+epoch n.:  244000
+-1.9400100000046012
+main: Winner: player 57%
+epoch n.:  245000
+-1.9500100000046667
+main: Winner: player 54%
+epoch n.:  246000
+-1.9600100000047322
+main: Winner: player 54%
+epoch n.:  247000
+-1.9700100000047978
+main: Winner: player 65%
+epoch n.:  248000
+-1.9800100000048633
+main: Winner: player 50%
+epoch n.:  249000
+-1.9900100000049288
+main: Winner: player 68%
+epoch n.:  250000
+-2.0000100000049943
+main: Winner: player 63%
+epoch n.:  251000
+-2.01001000000506
+main: Winner: player 56%
+epoch n.:  252000
+-2.0200100000051253
+main: Winner: player 68%
+epoch n.:  253000
+-2.030010000005191
+main: Winner: player 67%
+epoch n.:  254000
+-2.0400100000052563
+main: Winner: player 69%
+epoch n.:  255000
+-2.050010000005322
+main: Winner: player 77%
+epoch n.:  256000
+-2.0600100000053874
+main: Winner: player 66%
+epoch n.:  257000
+-2.070010000005453
+main: Winner: player 66%
+epoch n.:  258000
+-2.0800100000055184
+main: Winner: player 58%
+epoch n.:  259000
+-2.090010000005584
+main: Winner: player 63%
+epoch n.:  260000
+-2.1000100000056494
+main: Winner: player 55%
+epoch n.:  261000
+-2.110010000005715
+main: Winner: player 57%
+epoch n.:  262000
+-2.1200100000057804
+main: Winner: player 49%
+epoch n.:  263000
+-2.130010000005846
+main: Winner: player 49%
+epoch n.:  264000
+-2.1400100000059115
+main: Winner: player 52%
+epoch n.:  265000
+-2.150010000005977
+main: Winner: player 52%
+epoch n.:  266000
+-2.1600100000060425
+main: Winner: player 66%
+epoch n.:  267000
+-2.170010000006108
+main: Winner: player 50%
+epoch n.:  268000
+-2.1800100000061735
+main: Winner: player 48%
+epoch n.:  269000
+-2.190010000006239
+main: Winner: player 55%
+epoch n.:  270000
+-2.2000100000063045
+main: Winner: player 55%
+epoch n.:  271000
+-2.21001000000637
+main: Winner: player 47%
+epoch n.:  272000
+-2.2200100000064356
+main: Winner: player 53%
+epoch n.:  273000
+-2.230010000006501
+main: Winner: player 57%
+epoch n.:  274000
+-2.2400100000065666
+main: Winner: player 62%
+epoch n.:  275000
+-2.250010000006632
+main: Winner: player 53%
+epoch n.:  276000
+-2.2600100000066976
+main: Winner: player 57%
+epoch n.:  277000
+-2.270010000006763
+main: Winner: player 54%
+epoch n.:  278000
+-2.2800100000068286
+main: Winner: player 66%
+epoch n.:  279000
+-2.290010000006894
+main: Winner: player 63%
+epoch n.:  280000
+-2.3000100000069597
+main: Winner: player 46%
+epoch n.:  281000
+-2.310010000007025
+main: Winner: player 34%
+epoch n.:  282000
+-2.3200100000070907
+main: Winner: player 61%
+epoch n.:  283000
+-2.330010000007156
+main: Winner: player 70%
+epoch n.:  284000
+-2.3400100000072217
+main: Winner: player 65%
+epoch n.:  285000
+-2.350010000007287
+main: Winner: player 59%
+epoch n.:  286000
+-2.3600100000073527
+main: Winner: player 53%
+epoch n.:  287000
+-2.3700100000074182
+main: Winner: player 61%
+epoch n.:  288000
+-2.3800100000074838
+main: Winner: player 52%
+epoch n.:  289000
+-2.3900100000075493
+main: Winner: player 60%
+epoch n.:  290000
+-2.4000100000076148
+main: Winner: player 53%
+epoch n.:  291000
+-2.4100100000076803
+main: Winner: player 55%
+epoch n.:  292000
+-2.420010000007746
+main: Winner: player 63%
+epoch n.:  293000
+-2.4300100000078113
+main: Winner: player 47%
+epoch n.:  294000
+-2.440010000007877
+main: Winner: player 54%
+epoch n.:  295000
+-2.4500100000079423
+main: Winner: player 57%
+epoch n.:  296000
+-2.460010000008008
+main: Winner: player 48%
+epoch n.:  297000
+-2.4700100000080734
+main: Winner: player 55%
+epoch n.:  298000
+-2.480010000008139
+main: Winner: player 36%
+epoch n.:  299000
+-2.4900100000082044
+main: Winner: player 62%
+final rand fact:  0.1
+epoch n.:  0
+-2.50001000000827
+main: Winner: player 59%
+Saving to file...
+main: Winner: player 56%
+WARNING:root:main: Winner: player 56%
