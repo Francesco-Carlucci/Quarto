@@ -356,19 +356,19 @@ class Quarto(object):
         '''
         winner = -1
         while winner < 0 and not self.check_finished():
-            self.print()
+            #self.print()
             piece_ok = False
             while not piece_ok:
                 piece_ok = self.select(self.__players[self.__current_player].choose_piece())
             piece_ok = False
-            print(f"player {self.__current_player} selected the piece: {self.__selected_piece_index}: "
-                  f"{piece_to_symbol[self.__selected_piece_index]}\n")
+            #print(f"player {self.__current_player} selected the piece: {self.__selected_piece_index}: "
+            #      f"{piece_to_symbol[self.__selected_piece_index]}\n")
             self.__current_player = (self.__current_player + 1) % self.MAX_PLAYERS
             #self.print()
             while not piece_ok:
                 x, y = self.__players[self.__current_player].place_piece()
                 piece_ok = self.place(x, y)
-                print(f"player {self.__current_player} place at: ({x},{y})")
+                #print(f"player {self.__current_player} place at: ({x},{y})")
             winner = self.check_winner()
-        self.print()
+        #self.print()
         return winner
