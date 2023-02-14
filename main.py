@@ -1,40 +1,36 @@
-import Quarto
-from Player import RandomPlayer,HumanPlayer, minmaxPlayer,rulePlayer
+# Free for personal or classroom use; see 'LICENSE.md' for details.
+# https://github.com/squillero/computational-intelligence
+
 import logging
 import argparse
+import random
+import quarto
 
-import numpy as np
+
+class RandomPlayer(quarto.Player):
+    """Random player"""
+
+    def __init__(self, quarto: quarto.Quarto) -> None:
+        super().__init__(quarto)
+
+    def choose_piece(self) -> int:
+        return random.randint(0, 15)
+
+    def place_piece(self) -> tuple[int, int]:
+        return random.randint(0, 3), random.randint(0, 3)
 
 
 def main():
-    wins = []
-    for i in range(100):
-        game = Quarto.Quarto()
-        game.set_players((RandomPlayer(game),rulePlayer(game)))
-        """
-        | -1 | 0111 | 0010 | 1001 |
-        ---------------------------
-        | -1 | 0000 | 0001 | 0011 |
-        -------------------
-        | -1 | 0100 | 1000 | 1011 |
-        -------------------
-        | 0110 | 0101 | -1 | 1100 |
-        """
-        #endgame=np.array([[ -1, 7,2,9 ],[-1,0,1,3],[-1,4,8,11],[6,5,-1,12]])
-        #pieces=[p for p in range(15) if p not in [7,2,9,0,1,3,4,8,11,6,5,12]]
-        #game.fromBoard(endgame,game.get_selected_piece())
-        winner = game.run()
-        wins.append(winner)
-    logging.warning(f"main: Winner: player {wins}")
-    print(sum(wins),"% wins")
-
-    print(f"Winner: player {winner}")
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    game = quarto.Quarto()
+    game.set_players((RandomPlayer(game), RandomPlayer(game)))
+    winner = game.run()
+    logging.warning(f"main: Winner: player {winner}")
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-v', '--verbose', action='count', default=0, help='increase log verbosity')
+    parser.add_argument('-v', '--verbose', action='count',
+                        default=0, help='increase log verbosity')
     parser.add_argument('-d',
                         '--debug',
                         action='store_const',

@@ -34,21 +34,31 @@ class HumanPlayer(Quarto.Player):
 
 def minmaxplace(board,positions,pieces,lvl,lookforDraw):
 
-    if board.check_winner() >= 0:
-        return None,-1
-    if board.check_finished():
-        return None,0
-    if positions==[] or pieces==[]:
-        return None,0
+    x, y = check_horizontal_tris(board.get_board_status(), board.get_pieces(), board.get_selected_piece())
+    if x >= 0:
+        return ((x,y),None,1)
+    # board transposed for vertical
+    x, y = check_horizontal_tris(board.get_board_status().T, board.get_pieces(), board.get_selected_piece())
+    if y >= 0:
+        return ((y,x),None,1)
+    x, y = check_diagonal_tris(board.get_board_status(), board.get_pieces(), board.get_selected_piece())
+    if x >= 0:
+        return ((x,y),None,1)
 
-    if lvl>5:   #level stop
-        positions=random.sample(positions, k=max(int(len(positions)/5),1))
-        pieces = random.sample(pieces, k=max(int(len(pieces) / 5), 1))
+    if board.check_winner() >= 0: #not needed if there are less than 3 pieces (we can use lookForDraw)
+        return None,None,-1
+    #if board.check_finished():   #equal to len(positions)
+    #    return None,None,0
+    if positions==[] or pieces==[]:
+        return None,None,0
+
+    if lvl>2:   #level stop
+        positions=random.sample(positions, k=max(int(len(positions)/4),1))
+        pieces = random.sample(pieces, k=max(int(len(pieces) / 4), 1))
 
     for pos in positions:
         #for piece in pieces:
-        newBoard=Quarto.Quarto().fromBoard(board.get_board_status(),
-                                           board.get_pieces(),board.get_selected_piece())
+        newBoard=Quarto.Quarto().fromBoard(board.get_board_status(),board.get_selected_piece())
         newBoard.place(pos[0],pos[1])
         #newBoard.select(piece)
         newPos=copy.deepcopy(positions)
@@ -56,31 +66,46 @@ def minmaxplace(board,positions,pieces,lvl,lookforDraw):
         newPieces=copy.deepcopy(pieces)
         #newPieces.remove(piece)
 
-        _,val=minmaxselect(newBoard,newPos,newPieces,lvl+1,lookforDraw)
+        nextpiece,val=minmaxselect(newBoard,newPos,newPieces,lvl+1,lookforDraw)
         if val==1:
-            return (pos,val)
+            return (pos,nextpiece,val)
         if lookforDraw and val==0:
-            return (pos,val)
-    return (pos,val)  #if there is no way to win
+            return (pos,nextpiece,val)
+    return (pos,nextpiece,val)  #if there is no way to win
 
 
-def minmaxselect(board,positions,pieces,lvl,lookforDraw):
+def minmaxselect(board,positions,pieces,lvl,lookforDraw): #change board to game!
+
+    """
+    #game = self._Player__quarto
+    #board = game.get_board_status()
+    #pieces = game.get_pieces()
+    x, y = check_horizontal_tris(board.get_board_status(), board.get_pieces(), board.get_selected_piece())
+    if x >= 0:
+        return 1
+    #board transposed for vertical
+    x, y = check_horizontal_tris(board.get_board_status().T, board.get_pieces(), board.get_selected_piece())
+    if y >= 0:
+        return 1
+    x, y = check_diagonal_tris(board.get_board_status(), board.get_pieces(), board.get_selected_piece())
+    if x >= 0:
+        return 1
+    """
 
     if board.check_winner() > 0:
-        return None,1
+        return None,-1
     if board.check_finished():
         return None,0
     if positions==[] or pieces==[]:
         return None,0
 
-    if lvl>5:   #level stop
-        positions=random.sample(positions, k=max(int(len(positions)/5),1))
-        pieces = random.sample(pieces, k=max(int(len(pieces) / 5), 1))
+    if lvl>2:   #level stop
+        positions=random.sample(positions, k=max(int(len(positions)/4),1))
+        pieces = random.sample(pieces, k=max(int(len(pieces) / 4), 1))
 
     #for pos in positions:
     for piece in pieces:
-        newBoard=Quarto.Quarto().fromBoard(board.get_board_status(),
-                                           board.get_pieces(),board.get_selected_piece())
+        newBoard=Quarto.Quarto().fromBoard(board.get_board_status(),board.get_selected_piece())
         #newBoard.place(pos[0],pos[1])
         newBoard.select(piece)
         newPos=copy.deepcopy(positions)
@@ -88,7 +113,7 @@ def minmaxselect(board,positions,pieces,lvl,lookforDraw):
         newPieces=copy.deepcopy(pieces)
         newPieces.remove(piece)
 
-        _,val=minmaxplace(newBoard,newPos,newPieces,lvl,lookforDraw)
+        _,_,val=minmaxplace(newBoard,newPos,newPieces,lvl,lookforDraw)
         if -val==1:
             return piece,-val
         if lookforDraw and val==0:
@@ -99,8 +124,11 @@ class minmaxPlayer(Quarto.Player):
 
     def __init__(self, quarto: Quarto.Quarto) -> None:
         super().__init__(quarto)
+        self.nextpiece=-1
 
     def choose_piece(self) -> int:
+        if self.nextpiece is not None and self.nextpiece>=0:
+            return self.nextpiece
         game=self._Player__quarto
         board=game.get_board_status()
         availablePos=[(x,y) for x in range(4) for y in range(4) if board[x][y]==-1]
@@ -126,10 +154,11 @@ class minmaxPlayer(Quarto.Player):
         if len(availablePos) in [boardDim, boardDim - 1, boardDim - 2, boardDim - 3]:
             lookforDraw = 1
 
-        pos, _ = minmaxplace(game, availablePos, availablePieces,0,lookforDraw)
+        pos,nextpiece,_ = minmaxplace(game, availablePos, availablePieces,0,lookforDraw)
+        self.nextpiece=nextpiece
+        x,y=pos
 
-
-        return pos
+        return y,x
 
 def check_horizontal_tris(board,pieces,piece) -> tuple[int, int]:
     lenTris = len(board) - 1
