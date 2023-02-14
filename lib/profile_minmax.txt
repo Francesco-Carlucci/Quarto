@@ -1,0 +1,82 @@
+554.0267057418823
+hit:  43215  miss:  305899  hit ratio:  0.12378478090251321
+Saving cache to file...
+[1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+main: Winner: player 85%
+Wrote profile results to customMain.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 537.305 s
+File: C:\Users\utente\Desktop\CompInt\QuartoMatteoNuovo\.\lib\MinMax.py
+Function: minmaxplace at line 33
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    33                                           @profile
+    34                                           def minmaxplace(game, positions, pieces, lvl, lookforDraw):
+    35
+    36    269410   16648635.7     61.8      3.1      if game.check_winner() >= 0:
+    37       187         86.4      0.5      0.0          return None,None,-1
+    38    269223     183238.3      0.7      0.0      if positions==[]: # or pieces==[]:
+    39                                                   return None,None,0
+    40    269223   78615822.2    292.0     14.6      x, y = check_tris(game)
+    41    269223     191014.1      0.7      0.0      if x != -1 and y != -1:
+    42     74664      42930.3      0.6      0.0          return ((x, y), None, 1)
+    43
+    44    194559     109963.2      0.6      0.0      if lvl>level_stop:   #level stop
+    45    175058    2075601.2     11.9      0.4          positions = random.sample(positions, k=max(int(len(positions)/approximation_factor),1))
+    46                                                   #positions=positions[0:max(int(len(positions)/2),1)]
+    47
+    48    194559     103896.7      0.5      0.0      bestpos=None
+    49    194559      79236.3      0.4      0.0      bestval=-2
+    50    194559      75903.2      0.4      0.0      bestnextpiece=None
+    51    521802     263219.0      0.5      0.0      for pos in positions:
+    52    349114     143398.7      0.4      0.0          """
+    53                                                       New game from previous board
+    54                                                   """
+    55    349114   13594302.2     38.9      2.5          newGame=Quarto() #.fromBoard(board.get_board_status(),board.get_selected_piece())
+    56    349114   12083275.9     34.6      2.2          newGame.reset()
+    57    349114    2501070.2      7.2      0.5          newGame._board=game.get_board_status()
+    58    349114    1967974.9      5.6      0.4          newGame._Quarto__binary_board=copy.deepcopy(game._Quarto__binary_board)
+    59    349114     166114.5      0.5      0.0          """
+    60                                                       Place piece in a position
+    61                                                   """
+    62    349114    3101406.8      8.9      0.6          newGame.select(game.get_selected_piece())
+    63    349114    2157329.6      6.2      0.4          newGame.place(pos[1],pos[0])
+    64
+    65    349114     194004.2      0.6      0.0          if use_symmetries:
+    66    349114  337147161.8    965.7     62.7              normalBoard,normal_str=normalize(newGame._Quarto__binary_board)
+    67    349114     748605.8      2.1      0.1              if normal_str in pos_cache:
+    68                                                           global hit   #DEF: una canzone di successo internazionale
+    69     43215      34453.8      0.8      0.0                  hit+=1
+    70     43215      30767.0      0.7      0.0                  val=pos_cache[normal_str]
+    71     43215      22343.1      0.5      0.0                  if val==1:
+    72      1945       1456.5      0.7      0.0                      return pos,None,val
+    73     41270      21635.7      0.5      0.0                  if val>bestval:
+    74     12502       5623.2      0.4      0.0                      bestval=val
+    75     12502       5256.6      0.4      0.0                      bestpos=pos
+    76     41270      21054.2      0.5      0.0                  continue
+    77                                                       else:
+    78                                                           global miss  #DEF: vincitrice di una competizione di bellezza internazionale
+    79    305899     231970.9      0.8      0.0                  miss+=1
+    80
+    81    305899   13428278.3     43.9      2.5          newPos=copy.deepcopy(positions)
+    82    305899     294530.6      1.0      0.1          newPos.remove(pos)
+    83    305899    3349713.0     11.0      0.6          newPieces=copy.deepcopy(pieces)
+    84
+    85    305899   46737401.7    152.8      8.7          nextpiece, val = minmaxselect(newGame,newPos,newPieces,lvl+1,lookforDraw)
+    86                                                   #print("lvl: ",lvl,"pos: ", nextpiece, val, "\n")
+    87                                                   #if val==1 or (lookforDraw and val == 0):
+    88                                                   #    if use_symmetries:
+    89                                                   #        pos_cache[normal_str] = val
+    90                                                   #    return (pos,nextpiece,val)
+    91    305899     206548.6      0.7      0.0          if val > bestval:
+    92    201157      88978.6      0.4      0.0              bestval = val
+    93    201157      81587.4      0.4      0.0              bestpos = pos
+    94    201157      79026.1      0.4      0.0              bestnextpiece=nextpiece
+    95    201157     125283.7      0.6      0.0              if val == 1 or (lookforDraw and val == 0):
+    96     19926       9725.6      0.5      0.0                  break
+    97
+    98    192614      89210.5      0.5      0.0      if use_symmetries:
+    99    192614     151318.0      0.8      0.0          pos_cache[normal_str] = bestval
+   100    192614      94987.6      0.5      0.0      return (bestpos,bestnextpiece,bestval)  #if there is no way to win
